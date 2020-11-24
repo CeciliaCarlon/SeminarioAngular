@@ -4,31 +4,19 @@
             <th scope="col">Titulo</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Precio</th>
-            <th scope="col">Stock</th>
             <th scope="col">Imagen</th>
+            <th scope="col">Stock</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td scope="row">{{tecno1.titulo}}</td>
-            <td>{{tecno1.descripcion}}</td>
-            <td>${{tecno1.precio}}</td>
-            <td>{{tecno1.stock}}</td>
-            <td><img [src]="tecno1.imagen" [alt]="tecno1.titulo"></td>
-        </tr>
-        <tr>
-            <td scope="row">{{tecno2.titulo}}</td>
-            <td>{{tecno2.descripcion}}</td>
-            <td>${{tecno2.precio}}</td>
-            <td>{{tecno2.stock}}</td>
-            <td><img [src]="tecno2.imagen" [alt]="tecno2.titulo"></td>
-        </tr>
-        <tr>
-            <td scope="row">{{tecno3.titulo}}</td>
-            <td>{{tecno3.descripcion}}</td>
-            <td>${{tecno3.precio}}</td>
-            <td>{{tecno3.stock}}</td>
-            <td><img [src]="tecno3.imagen" [alt]="tecno3.titulo"></td>
+        <tr *ngFor="let producto of productos" [ngClass]="{'oferta': producto.oferta}" >
+            <td scope="row">{{producto.titulo}}</td>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.precio | currency}}</td>
+            <td><img [src]="producto.imagen" [alt]="producto.titulo"></td>
+            <td><span *ngIf="producto.stock==0" class="badge badge-danger">Sin Stock</span>
+                <span *ngIf="producto.stock>0" class="badge badge-success">Con Stock</span>
+            </td>
         </tr>
     </tbody>
 </table>
