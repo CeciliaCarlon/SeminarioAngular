@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ElectrodomesticoListComponent } from './electrodomestico-list.component';
+import { electrodomesticoListComponent } from "./electrodomesticoListComponent";
 
 describe('ElectrodomesticoListComponent', () => {
-  let component: ElectrodomesticoListComponent;
-  let fixture: ComponentFixture<ElectrodomesticoListComponent>;
+  let component: electrodomesticoListComponent;
+  let fixture: ComponentFixture<electrodomesticoListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ElectrodomesticoListComponent ]
+      declarations: [ electrodomesticoListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ElectrodomesticoListComponent);
+    fixture = TestBed.createComponent(electrodomesticoListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

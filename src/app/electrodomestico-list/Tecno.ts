@@ -5,4 +5,5 @@ export interface Tecno{
     stock: number;
     oferta: boolean;
     imagen: string;
+    cantidad: number;
 }

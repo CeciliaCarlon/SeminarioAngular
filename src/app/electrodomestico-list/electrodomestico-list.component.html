@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<table class="table table-bordered text-center">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Titulo</th>
@@ -6,6 +6,7 @@
             <th scope="col">Precio</th>
             <th scope="col">Imagen</th>
             <th scope="col">Stock</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -13,10 +14,20 @@
             <td scope="row">{{producto.titulo}}</td>
             <td>{{producto.descripcion}}</td>
             <td>{{producto.precio | currency}}</td>
-            <td><img [src]="producto.imagen" [alt]="producto.titulo"></td>
-            <td><span *ngIf="producto.stock==0" class="badge badge-danger">Sin Stock</span>
-                <span *ngIf="producto.stock>0" class="badge badge-success">Con Stock</span>
-            </td>
+            <td><img width="150" [src]="producto.imagen" [alt]="producto.titulo"></td>
+            <td><span class="badge badge-danger" *ngIf="producto.stock==0; else elseConStock">Sin Stock</span></td>
+            <ng-template #elseConStock>
+                <span class="badge badge-success">Con Stock</span>
+            </ng-template>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary" (click)="menosCantidad(producto)"><i class="fas fa-minus"></i></button>
+                    <input class="p-3 mb-2 bg-secondary text-white" [(ngModel)]="producto.cantidad">
+                    <button type="button" class="btn btn-secondary" (click)="masCantidad(producto)"><i class="fas fa-plus"></i></button>
+                </div>
+            </td> 
         </tr>
     </tbody>
 </table>
+
+
