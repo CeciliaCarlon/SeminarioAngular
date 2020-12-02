@@ -8,6 +8,7 @@ import { CarritoComprasComponent } from './carrito-compras/carrito-compras.compo
 import { FormsModule } from '@angular/forms';
 import { MabrexAboutComponent } from './mabrex-about/mabrex-about.component';
 import { MabrexProductosComponent } from './mabrex-productos/mabrex-productos.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MabrexProductosComponent } from './mabrex-productos/mabrex-productos.co
     electrodomesticoListComponent,
     CarritoComprasComponent,
     MabrexAboutComponent,
-    MabrexProductosComponent
+    MabrexProductosComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,

@@ -45,15 +45,9 @@ export class electrodomesticoListComponent {
   ngOnInit(): void {
   }
 
-  menosCantidad(producto: Tecno): void {
-    if (producto.cantidad > 0) {
-      producto.cantidad--;
-    }
-  }
-
-  masCantidad(producto: Tecno): void {
-    if (producto.cantidad < producto.stock) {
-      producto.cantidad++;
+  maxAlcanzado($e: boolean){
+    if($e){
+      alert("Ya no se pueden agregar mas productos");
     }
   }
 

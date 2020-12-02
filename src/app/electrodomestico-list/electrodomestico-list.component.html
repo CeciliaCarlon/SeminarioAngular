@@ -19,13 +19,7 @@
             <ng-template #elseConStock>
                 <span class="badge badge-success">Con Stock</span>
             </ng-template>
-            <td>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary" (click)="menosCantidad(producto)"><i class="fas fa-minus"></i></button>
-                    <input class="p-3 mb-2 bg-secondary text-white" [(ngModel)]="producto.cantidad">
-                    <button type="button" class="btn btn-secondary" (click)="masCantidad(producto)"><i class="fas fa-plus"></i></button>
-                </div>
-            </td> 
+            <td><app-input-integer [(cantidad)]="producto.cantidad" [max]="producto.stock" *ngIf="producto.stock" (maxAlcanzado)="maxAlcanzado($event)"></app-input-integer></td> 
         </tr>
     </tbody>
 </table>
