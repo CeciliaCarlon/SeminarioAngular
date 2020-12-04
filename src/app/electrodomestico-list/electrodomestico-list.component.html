@@ -19,7 +19,10 @@
             <ng-template #elseConStock>
                 <span class="badge badge-success">Con Stock</span>
             </ng-template>
-            <td><app-input-integer [(cantidad)]="producto.cantidad" [max]="producto.stock" *ngIf="producto.stock" (maxAlcanzado)="maxAlcanzado($event)"></app-input-integer></td> 
+            <td *ngIf="producto.stock">
+            <app-input-integer [(cantidad)]="producto.cantidad" [max]="producto.stock" (maxAlcanzado)="maxAlcanzado($event)"></app-input-integer>
+            <button class="btn btn-outline-dark" (click)="addAlCarrito(producto)"><i class="fas fa-shopping-cart"></i></button>
+            </td> 
         </tr>
     </tbody>
 </table>

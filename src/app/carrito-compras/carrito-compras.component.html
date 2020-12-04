@@ -1,22 +1,21 @@
 <table class="table table-bordered table-dark">
     <thead>
       <tr>
-        <th scope="col">Precio</th>
+        <th scope="col">Producto</th>
         <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">$10000</th>
-        <td>2</td>
-      </tr>
-      <tr>
-        <th scope="row">$15000</th>
-        <td>1</td>
+      <tr *ngFor="let producto of (compras$ | async)">
+        <td scope="row">{{producto.titulo}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.precio*producto.cantidad | currency}}</td>
       </tr>
       <tr>
         <th scope="row">Total</th>
-        <td colspan="3">$25000</td>
+        <td colspan="3">{{total$ | async | currency}}</td>
       </tr>
     </tbody>
-  </table>
+</table>
+
